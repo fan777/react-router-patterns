@@ -1,0 +1,16 @@
+.DogList {
+  margin-top: 10px;
+}
+
+.dogThumbnail {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.row {
+  width: 200px;
+  text-align: left;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px dotted black;
+}
