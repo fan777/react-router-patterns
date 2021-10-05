@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import './NewColorForm.css';
 
-const NewColorForm = () => {
+const NewColorForm = ({ addColor }) => {
   const [formData, setFormData] = useState({ colorName: '', colorValue: '#ffffff' });
   const history = useHistory();
 
@@ -19,8 +19,7 @@ const NewColorForm = () => {
     e.preventDefault();
     // console.log(formData.colorName);
     // console.log(formData.colorValue);
-    // addBox({ ...formData });
-    // setFormData(initialState);
+    addColor({ [formData.colorName]: formData.colorValue });
     history.push('/colors')
   }
 
