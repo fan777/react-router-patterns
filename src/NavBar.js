@@ -9,10 +9,10 @@ const NavBar = ({ dogs }) => {
 
   return (
     <nav>
-      <NavLink exact to='/' className='navLink'>Home</NavLink><br />
-      <NavLink exact to='/dogs' className='navLink'>Dogs</NavLink><br />
+      <NavLink to='/' className='navLink'>Home</NavLink><br />
+      <NavLink to='/dogs' className='navLink'>Dogs</NavLink><br />
       {dogList}<br />
-      <NavLink exact to='/colors' className='navLink'>Colors</NavLink><br />
+      <NavLink to='/colors' className='navLink'>Colors</NavLink><br />
     </nav>
   )
 }

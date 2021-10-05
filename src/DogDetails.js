@@ -1,16 +1,14 @@
-import { useParams, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 import './DogDetails.css'
 
-const DogDetails = ({ dogs }) => {
-  const { name } = useParams();
-  const dog = dogs.find(d => d.name.toLowerCase() === name.toLowerCase());
+const DogDetails = ({ dog }) => {
   if (!dog) return null
 
-  const { name: dogName, age, src, facts } = dog;
+  const { name, age, src, facts } = dog;
   return (
     <div className='DogDetails'>
-      <h2>My name is {dogName}</h2>
+      <h2>My name is {name}</h2>
       <img src={src} alt={name} />
       <h2>I am {age} years old</h2>
       <ul>
@@ -18,7 +16,7 @@ const DogDetails = ({ dogs }) => {
           <li key={i}>{fact}</li>
         ))}
       </ul>
-      <Link exact to='/dogs'>Go back!</Link>
+      <Link to='/dogs'>Go back!</Link>
     </div>
   )
 }

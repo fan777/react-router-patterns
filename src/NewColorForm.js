@@ -1,13 +1,11 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import './NewColorForm.css';
 
 const NewColorForm = () => {
-  const initialState = {
-    colorName: "",
-    colorValue: ""
-  }
-  const [formData, setFormData] = useState(initialState);
+  const [formData, setFormData] = useState({ colorName: '', colorValue: '#ffffff' });
+  const history = useHistory();
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -19,8 +17,11 @@ const NewColorForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // console.log(formData.colorName);
+    // console.log(formData.colorValue);
     // addBox({ ...formData });
-    setFormData(initialState);
+    // setFormData(initialState);
+    history.push('/colors')
   }
 
   return (
@@ -28,9 +29,21 @@ const NewColorForm = () => {
       <h2>Color form!</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="colorName">Color name:</label>
-        <input id="colorName" type="text" name="colorName" placeholder="Enter a name for the color" value={formData.colorName} onChange={handleChange} /> <br />
+        <input
+          id="colorName"
+          type="text"
+          name="colorName"
+          placeholder="Enter a name for the color"
+          value={formData.colorName}
+          onChange={handleChange} /> <br />
         <label htmlFor="colorValue">Color value:</label>
-        <input id="colorValue" type="color" name="colorValue" value={formData.colorValue} onChange={handleChange} /><br />
+        <input
+          id="colorValue"
+          type="color"
+          name="colorValue"
+          value={formData.colorValue}
+          onChange={handleChange} /><br />
+        <label />
         <button>Add this color</button>
       </form>
     </div>

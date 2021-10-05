@@ -1,6 +1,6 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
 import DogList from './DogList';
-import DogDetails from './DogDetails';
+import FilteredDogDetails from './FilteredDogDetails';
 import ColorList from './ColorList';
 import NewColorForm from './NewColorForm';
 import Color from './Color';
@@ -12,7 +12,7 @@ const Routes = ({ dogs }) => {
         <DogList dogs={dogs} />
       </Route>
       <Route path='/dogs/:name'>
-        <DogDetails dogs={dogs} />
+        <FilteredDogDetails dogs={dogs} />
       </Route>
       <Route exact path='/colors'>
         <ColorList />

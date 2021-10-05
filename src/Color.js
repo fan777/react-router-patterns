@@ -1,11 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
 
+import './Color.css'
+
 const Color = () => {
   const { color } = useParams();
   return (
-    <div>
+    <div className='Color' style={{ backgroundColor: color }}>
       <h2>{color}</h2>
-      <Link exact to={'/colors'}>Go back!</Link>
+      <Link to={'/colors'}>Go back!</Link>
     </div>
   )
 }
